@@ -1,0 +1,40 @@
+<style>
+	p{
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		transform: translate(-50%,-50%);
+	}
+</style>
+<p id="inc"></p>
+<p id="dec"></p>
+<script>
+	let x = document.querySelector("p#inc");
+	let y = document.querySelector("p#dec");
+	let i = 0;
+	let j = 51;
+	setInterval(() =>
+	{
+		if(i<=50)
+		{
+			x.style.fontSize =(i++)+"pt";
+			x.innerText = "TEXT-GROWING";
+			x.style.color = "red";
+		}
+		else
+		{
+			x.style.display = "none";
+			if(j>=5)
+			{
+				y.style.fontSize =(j--)+"pt";
+				y.innerText = "TEXT-SHRINKING";
+				y.style.color = "blue";
+			}
+			else
+				clearInterval(id);
+		}
+	},100);
+</script>
